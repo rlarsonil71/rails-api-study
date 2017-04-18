@@ -41,7 +41,12 @@ In your own words, define what the responsibilities of the model layer are in
 Rails.
 
 ```md
-<!-- your answer here -->
+The model layer is the layer of classes that store and validate data to the
+database so that the developer does not have to directly write SQL to the database.
+
+References:
+https://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## Define Controller Responsibilities
@@ -50,7 +55,16 @@ In your own words, define what the responsibilities of the controller layer are
 in Rails.
 
 ```md
-<!-- your answer here -->
+The controller layer is the layer of Ruby classes that communicate to the user
+and grab user input from the client browser, process business logic and send data
+to the correct model layer.
+
+Controllers also handle things like sessions, logins/authorization, filters,
+redirection, and errors.
+
+References:
+https://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## Define Router Responsibilities
@@ -58,7 +72,13 @@ in Rails.
 In your own words, define what the router does in Rails.
 
 ```md
-<!-- your answer here -->
+The Rails router recognizes and parses URLs, figures out what controller to use,
+and then sends the URLs to a controller so that the controller can act on it.  The
+Rails router also generates paths and URLs.
+
+References:
+http://guides.rubyonrails.org/routing.html
+http://guides.rubyonrails.org/action_controller_overview.html
 ```
 
 ## The Request-Response Cycle in Rails
@@ -67,5 +87,18 @@ Starting with a client making a GET request to a particular URL, describe how
 the parts of Rails interact to produce and send a response.
 
 ```md
-<!-- your answer here -->
+- Client makes a GET request to a particular URL to the server.
+- The server receives the incoming GET request from a front-end client and
+executes specific behaviors in response to this request.
+- The server triggers the appropriate controller to retrieve data records through
+some kind of data storage system.
+- The specific controller that is triggered by the server will use the appropriate
+model to access the requested data from the database and that specific model will
+return the requested data from the database as well as a success or failure
+response.
+- The controller will then construct a VIEW with the requested content back to
+the original client.
+
+Reference:
+https://github.com/ga-wdi-boston/rails-api
 ```
